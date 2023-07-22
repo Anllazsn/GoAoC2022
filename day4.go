@@ -43,14 +43,14 @@ func Day4_PartTwo(input string) int {
 		b := strings.Split(assign_b, "-")
 
 		min_a, _ := strconv.Atoi(a[0])
-		//max_a, _ := strconv.Atoi(a[1])
-		//min_b, _ := strconv.Atoi(b[0])
+		max_a, _ := strconv.Atoi(a[1])
+		min_b, _ := strconv.Atoi(b[0])
 		max_b, _ := strconv.Atoi(b[1])
 
-		if min_a <= max_b {
+		if (min_a >= min_b && min_a <= max_b) || (max_a >= min_b && max_a <= max_b) {
 			acc++
 			continue
-		} else if min_a >= max_b {
+		} else if (min_b >= min_a && min_b <= max_a) || (max_b >= min_a && max_b <= max_a) {
 			acc++
 			continue
 		}
