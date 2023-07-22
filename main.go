@@ -20,7 +20,7 @@ func Read(file string) string {
 
 func Day2() {
 	fmt.Println("DAY 2")
-	input := Read("day2_input.txt")
+	input := Read("inputs/day2_input.txt")
 	partOne := Day2_PartOne(input)
 	partTwo := Day2_PartTwo(input)
 
@@ -30,7 +30,7 @@ func Day2() {
 
 func Day3() {
 	fmt.Println("DAY 3")
-	input := Read("day3_input.txt")
+	input := Read("inputs/day3_input.txt")
 	partOne := Day3_PartOne(input)
 	partTwo := Day3_PartTwo(input)
 
@@ -40,7 +40,7 @@ func Day3() {
 
 func Day4() {
 	fmt.Println("DAY 4")
-	input := Read("day4_input.txt")
+	input := Read("inputs/day4_input.txt")
 	partOne := Day4_PartOne(input)
 	partTwo := Day4_PartTwo(input)
 
@@ -48,7 +48,17 @@ func Day4() {
 	fmt.Println("Part 2: ", partTwo)
 }
 
+func Day5() {
+	fmt.Println("DAY 5")
+	input := Read("inputs/day5_input.txt")
+	partOne := Day5_PartOne(input)
+	partTwo := Day5_PartTwo(input)
+
+	fmt.Println("Part 1: ", partOne)
+	fmt.Println("Part 2: ", partTwo)
+}
+
 func main() {
 	fmt.Println("ADVENT OF CODE")
-	Day4()
+	Day5()
 }
