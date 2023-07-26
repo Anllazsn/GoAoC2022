@@ -60,5 +60,20 @@ func Day5() {
 
 func main() {
 	fmt.Println("ADVENT OF CODE")
-	Day5()
+	//Day5()
+	input := `    [D]    
+[N] [C]    
+[Z] [M] [P]
+ 1   2   3 
+
+move 1 from 2 to 1
+move 3 from 1 to 3
+move 2 from 2 to 1
+move 1 from 1 to 2`
+	res := Day5_PartOne(input)
+	//ReadStacks(input)
+
+	//fmt.Println(string(input[4:7][1]))
+
+	fmt.Println(res)
 }
