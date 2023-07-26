@@ -16,9 +16,9 @@ type Stack = struct {
 }
 
 type Lexer = struct {
-	start, end int
-	t          int
-	value      string
+	start, end, row int
+	t               int
+	value           string
 }
 
 func Day5_PartOne(input string) int {
@@ -27,12 +27,14 @@ func Day5_PartOne(input string) int {
 	// var stacks []Stack
 	var lexers []Lexer
 
-	for _, row := range split {
-		for j, col := range row {
-
+	for i := 0; i < len(split); i++ {
+		row := split[i]
+		for j := 0; j < len(row); j++ {
+			col := row[j]
 			if col == '[' {
-				lexer := Lexer{start: j, t: Crate}
-				for k := j + 1; k < len(row); k++ {
+				lexer := Lexer{start: j, row: i, t: Crate}
+				k := j + 1
+				for ; k < len(row); k++ {
 					if row[k] == ']' {
 						lexer.end = k
 						break
@@ -40,7 +42,7 @@ func Day5_PartOne(input string) int {
 
 					lexer.value += string(row[k])
 				}
-
+				j = k
 				lexers = append(lexers, lexer)
 			}
 		}
@@ -85,6 +87,6 @@ func Day5_PartTwo(input string) int {
 
 func printLexers(lexers []Lexer) {
 	for _, l := range lexers {
-		fmt.Printf("LEXER [%d..%d] > %v \n", l.start, l.end, l.value)
+		fmt.Printf("LEXER R:%d C:[%d..%d] > %v \n", l.row, l.start, l.end, l.value)
 	}
 }
